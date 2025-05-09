@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -80,7 +81,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400">LinkedIn</h4>
-                  <p className="text-white">linkedin.com/in/tanay</p>
+                  <a href="https://www.linkedin.com/in/tanay-ghate-348534253" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neon-purple transition-colors">linkedin.com/in/tanay-ghate-348534253</a>
                 </div>
               </div>
               
@@ -90,7 +91,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400">GitHub</h4>
-                  <p className="text-white">github.com/tanay-dev</p>
+                  <a href="https://github.com/Tanay2Ghate" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neon-pink transition-colors">github.com/Tanay2Ghate</a>
                 </div>
               </div>
             </div>
