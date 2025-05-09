@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -36,18 +35,11 @@ const Contact = () => {
     .then((response) => {
       console.log('Email sent successfully:', response);
       setFormData({ name: '', email: '', message: '' });
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out! I'll get back to you soon.",
-      });
+      toast.success("Message sent! Thanks for reaching out! I'll get back to you soon.");
     })
     .catch((error) => {
       console.error('Error sending email:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive",
-      });
+      toast.error("Failed to send message. Please try again later.");
     })
     .finally(() => {
       setIsSubmitting(false);
@@ -78,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400">Email</h4>
-                  <p className="text-white">tanay@example.com</p>
+                  <p className="text-white">ghatetanay02@gmail.com</p>
                 </div>
               </div>
               
