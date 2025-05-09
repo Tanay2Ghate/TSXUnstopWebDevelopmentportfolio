@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import emailjs from 'emailjs-com';
+import { toast } from "@/components/ui/sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,13 +22,36 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
+    // Send email using EmailJS
+    emailjs.send(
+      'service_id', // Replace with your EmailJS service ID
+      'template_id', // Replace with your EmailJS template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      'user_id' // Replace with your EmailJS user ID
+    )
+    .then((response) => {
+      console.log('Email sent successfully:', response);
       setFormData({ name: '', email: '', message: '' });
-      alert('Thanks for reaching out! This is a demo form.');
-    }, 1500);
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out! I'll get back to you soon.",
+      });
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
   
   return (
