@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full border-2 border-neon-blue/30 animate-pulse"></div>
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/13a85c3c-19ea-4888-ac6f-a7aba15d4ad8.png" 
                 alt="Tanay's Profile Image"
                 className="w-full h-full object-cover rounded-full p-2"
               />
